@@ -6,12 +6,11 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @user = current_user
     @product = Product.new(product_params)
-    @product.user = @user = current_user
+    @product.user = current_user
 
     if @product.save
-      redirect_to @product, notice: "Superpower was successfully created."
+      redirect_to product_path(@product), notice: "Superpower was successfully created."
     else
       render :new, status: :unprocessable_entity
     end
