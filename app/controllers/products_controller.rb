@@ -3,11 +3,13 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
+    authorize @product
   end
 
   def create
     @product = Product.new(product_params)
     @product.user = current_user
+    authorize @product
 
     if @product.save
       redirect_to product_path(@product), notice: "Superpower was successfully created."
@@ -16,9 +18,12 @@ class ProductsController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+    authorize @product
+  end
 
   def update
+    authorize @product
     if @product.update(product_params)
       redirect_to @product, notice: "Superpower was successfully updated."
     else
@@ -27,10 +32,16 @@ class ProductsController < ApplicationController
   end
 
   def index
-    @products = Product.all
+    @products = policy_scope(Product)
   end
 
-  def show; end
+  def show
+    authorize @product
+  end
+
+  def destroy
+    authorize @product
+  end
 
   private
 
