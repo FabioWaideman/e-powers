@@ -5,16 +5,15 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-require 'faker'
+# require 'faker'
 
-user = User.create(username: "jao", full_name: "jao da silva", email:"jao@jao")
 
-10.times do
-  Product.create(
-    title: Faker::Superhero.power,
-    description: Faker::ChuckNorris.fact,
-    category: Faker::Superhero.suffix,
-    price: rand(1..300),
-    user: user
-  )
-end
+# 10.times do
+#   Product.create(
+#     title: Faker::Superhero.power,
+#     description: Faker::ChuckNorris.fact,
+#     category: Faker::Superhero.suffix,
+#     price: rand(1..300),
+#     user:
+#   )
+# end
