@@ -7,7 +7,7 @@
     <h6 class="card-subtitle mb-2 text-muted"><%= @product.category %></h6>
     <p class="card-text"><%= @product.description %></p>
     <p class="card-text"><small>Created by</small><%= @product.user.username %></p>
-    <a href="#" class="card-link">Buy</a>
+    <%= link_to "Buy this Power", new_product_order_path(@product) %>
     <%= link_to "Edit", edit_product_path %>
   </div>
 </div>
