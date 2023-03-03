@@ -43,7 +43,10 @@ class ProductsController < ApplicationController
   end
 
   def destroy
+    @product = Product.find(params[:id])
     authorize @product
+    @product.destroy
+    redirect_to products_path, notice: "Super power successfully deleted"
   end
 
   private
