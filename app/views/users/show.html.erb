@@ -19,4 +19,18 @@
     <p>No products for sale.</p>
   <% end %>
 <br>
+
+<h2>Powers Bought</h2>
+  <% if @user.orders.any? %>
+    <ul>
+      <% @user.orders.each do |order| %>
+      <% product = order.product  %>
+        <li><%= link_to product.title, product_path(product) %></li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>No products for sale.</p>
+  <% end %>
+<br>
+
 <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-danger mb-4" %>
