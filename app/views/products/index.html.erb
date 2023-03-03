@@ -1,6 +1,8 @@
 <h1>SuperPowers!!!</h1>
-<ul>
+
+<p class="icon">Get your new SuperPowers here!!!</p>
+<ul class="m-0">
 <% @products.each do |product| %>
- <li><%= link_to product.title, product_path(product) %></li>
+ <li><%= link_to product.title, product_path(product), class:"icon text-warning" %></li>
 <% end %>
 </ul>
