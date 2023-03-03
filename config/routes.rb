@@ -11,4 +11,4 @@ Rails.application.routes.draw do
     resources :orders, only: %i[new create]
   end
 
-end
+  resources :users, only: [:show]
