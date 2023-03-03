@@ -1,8 +1,16 @@
-<h1>SuperPowers!!!</h1>
-
-<p class="icon">Get your new SuperPowers here!!!</p>
-<ul class="m-0">
-<% @products.each do |product| %>
- <li><%= link_to product.title, product_path(product), class:"icon text-warning" %></li>
-<% end %>
-</ul>
+<h1>e-Powers</h1>
+<p class="icon">Become the super you!</p>
+<div class="d-flex m-3">
+  <% @products.each do |product| %>
+  <div class="card m-2 border-danger" style="width: 15rem;">
+    <%# <img src="..." class="card-img-top" alt="..."> %>
+    <div class="card-body text-center">
+      <h5 class="card-title text-danger info"><%= link_to product.title, product_path(product), class: "text-danger" %></h5>
+      <p class="card-text"><%= product.description %></p>
+      <%= link_to product_path(product), class: "btn btn-danger btn-sm" do %>
+        <button type="button" class="btn btn-danger btn-sm">View details</button>
+      <% end %>
+    </div>
+  </div>
+  <% end %>
+</div>
