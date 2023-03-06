@@ -1,0 +1,16 @@
+<h1>Confirm Order</h1>
+
+<p>You are buying <strong><%= @product.title %></strong>.</p>
+
+<% user_orders = [] %>
+<% current_user.orders.each do |order| %>
+<% user_orders << order.product%>
+<% end %>
+
+<% if user_orders.include?(@product) %>
+  <p>You already have this power</p>
+  <%= link_to "Back to Powers", root_path, class:"btn btn-danger" %>
+<% else %>
+<p>Do you confirm?</p>
+  <%= link_to "Buy this Power", product_orders_path, data: { turbo_method: :post }, class:"btn btn-danger" %>
+<% end %>

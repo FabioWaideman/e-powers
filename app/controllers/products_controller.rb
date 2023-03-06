@@ -1,4 +1,7 @@
 class ProductsController < ApplicationController
+
+  skip_before_action :authenticate_user!, only: %i[index show]
+
   before_action :set_product, only: %i[edit update show destroy]
 
   def new
@@ -40,7 +43,10 @@ class ProductsController < ApplicationController
   end
 
   def destroy
+    @product = Product.find(params[:id])
     authorize @product
+    @product.destroy
+    redirect_to products_path, notice: "Super power successfully deleted"
   end
 
   private
