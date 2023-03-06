@@ -1,12 +1,14 @@
 <h1>e-Powers</h1>
+
+<div class= "d-flex justify-content-between align-items-center">
 <p class="icon">Become the super you!</p>
 
-<%= link_to "<strong>Create a new power!</strong>".html_safe, new_product_path, class: "btn btn-danger" %>
-
+<%= link_to "<strong>Create a new power!</strong>".html_safe, new_product_path, class: "btn btn-danger mb-3" %>
+</div>
 <%= form_with url: products_path, method: :get, class: "d-flex" do %>
   <%= text_field_tag :query,
     params[:query],
-    class: "form-control",
+    class: "form-control me-1",
     placeholder: "Find a Superpower"
   %>
   <%= submit_tag "Search", class: "btn btn-danger" %>
