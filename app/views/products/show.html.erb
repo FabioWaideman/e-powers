@@ -1,8 +1,10 @@
 <h1>SuperPower</h1>
 <%= link_to "Back", products_path, class:"btn btn-danger mb-3" %>
 
+
 <div class="card" style="width: 19rem;">
   <div class="card-body d-flex flex-wrap">
+
     <h5 class="card-title"><%= @product.title %></h5>
     <%= cl_image_tag @product.photo.key, height: 300, width: 400, crop: :fit, class: "img-fluid mb-2" %>
     <h6 class="card-subtitle mb-2 text-muted"><%= @product.category %></h6>
@@ -22,6 +24,6 @@
           <%= link_to "Buy this Power", new_product_order_path(@product), class: "btn btn-danger" %>
         </div>
       <% end %>
-    </div>
+    </div>  
   </div>
 </div>
