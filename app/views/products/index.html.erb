@@ -20,7 +20,7 @@
   <div class="card m-2 border-danger" style="width: 15rem;">
     <%= cl_image_tag product.photo.key, height: 200, width: 300, crop: :fit, class: "card-img-top" %>
     <div class="card-body">
-      <h5 class="card-title text-danger info"><%= link_to product.title, product_path(product), class: "text-danger" %></h5>
+      <h5 class="card-title text-danger info"><%= link_to product.title, product_path(product), class: "text-decoration-none text-danger" %></h5>
       <p class="card-text"><%= product.description %></p>
     </div>
     <div class="card-footer text-center background-color-white">
