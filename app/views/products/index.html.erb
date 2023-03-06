@@ -1,5 +1,15 @@
 <h1>e-Powers</h1>
 <p class="icon">Become the super you!</p>
+
+<%= form_with url: products_path, method: :get, class: "d-flex" do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a Superpower"
+  %>
+  <%= submit_tag "Search", class: "btn btn-danger" %>
+<% end %>
+
 <div class="d-flex m-3">
   <% @products.each do |product| %>
   <div class="card m-2 border-danger" style="width: 15rem;">
