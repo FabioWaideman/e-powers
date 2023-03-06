@@ -80,4 +80,4 @@ end
 gem "devise"
 gem 'webpacker'
 gem "pundit"
-
+gem "pg_search"
