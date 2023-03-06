@@ -1,7 +1,7 @@
 <h1>e-Powers</h1>
 <p class="icon">Become the super you!</p>
 
-<%= link_to "<strong>Create a new power!</strong>".html_safe, new_product_path, class: "btn btn-danger" %>
+<%= link_to "<strong>Create a new power!</strong>".html_safe, new_product_path, class: "btn btn-danger mb-3" %>
 
 <%= form_with url: products_path, method: :get, class: "d-flex" do %>
   <%= text_field_tag :query,
