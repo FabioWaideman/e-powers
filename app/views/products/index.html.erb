@@ -1,6 +1,8 @@
 <h1>e-Powers</h1>
 <p class="icon">Become the super you!</p>
 
+<%= link_to "<strong>Create a new power!</strong>".html_safe, new_product_path, class: "btn btn-danger" %>
+
 <%= form_with url: products_path, method: :get, class: "d-flex" do %>
   <%= text_field_tag :query,
     params[:query],
@@ -10,13 +12,16 @@
   <%= submit_tag "Search", class: "btn btn-danger" %>
 <% end %>
 
+
 <div class="d-flex m-3">
   <% @products.each do |product| %>
   <div class="card m-2 border-danger" style="width: 15rem;">
-    <%# <img src="..." class="card-img-top" alt="..."> %>
-    <div class="card-body text-center">
+    <%= cl_image_tag product.photo.key, height: 200, width: 300, crop: :fit, class: "card-img-top" %>
+    <div class="card-body">
       <h5 class="card-title text-danger info"><%= link_to product.title, product_path(product), class: "text-danger" %></h5>
       <p class="card-text"><%= product.description %></p>
+    </div>
+    <div class="card-footer text-center background-color-white">
       <%= link_to product_path(product), class: "btn btn-danger btn-sm" do %>
         <button type="button" class="btn btn-danger btn-sm">View details</button>
       <% end %>
