@@ -8,7 +8,7 @@
 <% if @user.avatar.present? %>
 <p>
 <strong>Avatar:</strong>
-<%= cl_image_tag @user.avatar.key %>
+<%= cl_image_tag @user.avatar.key,height: 150, width: 150, crop: :fit, class: "img-fluid" %>
 </p>
 <% end %>
 <br>
