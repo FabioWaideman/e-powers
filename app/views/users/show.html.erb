@@ -5,6 +5,12 @@
 <h2>Super Informations:</h2>
 <p>Name: <%= @user.full_name %></p>
 <p>Email: <%= @user.email %></p>
+<% if @user.avatar.present? %>
+<p>
+<strong>Avatar:</strong>
+<%= cl_image_tag @user.avatar.key %>
+</p>
+<% end %>
 <br>
 <br>
 <br>
@@ -24,7 +30,7 @@
   <% if @user.orders.any? %>
     <ul>
       <% @user.orders.each do |order| %>
-      <% product = order.product  %>
+      <% product = order.product %>
         <li><%= link_to product.title, product_path(product) %></li>
       <% end %>
     </ul>
@@ -34,4 +40,3 @@
 <br>
 
 <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-danger mb-4" %>
-
